@@ -1,3 +1,4 @@
+-- The settings are almost basic (from plugin GH repo)
 local dapui_status_ok, dapui = pcall(require, "dapui")
 if not dapui_status_ok then
     return
@@ -30,8 +31,8 @@ dapui.setup({
         position = "left", -- Can be "left", "right", "top", "bottom"
     },
     tray = {
-        elements = {},
-        size = -10, -- kind of disables the repl
+        elements = {}, -- kind of disables the repl
+        size = -1,
         position = "bottom", -- Can be "left", "right", "top", "bottom"
     },
     floating = {
@@ -48,6 +49,7 @@ dapui.setup({
     }
 })
 
+-- Integration with the dap actions
 local dap = require("dap")
 
 dap.listeners.after.event_initialized["dapui_config"] = function()

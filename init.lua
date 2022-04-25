@@ -21,14 +21,14 @@ require "user.treesitter" -- helps to better highlight syntax and context commen
 require "user.comment" -- comment single line by pressing gcc, indent lines and press
 -- gc in visual mode to comment multiple lines
 require "user.gitsigns" -- git highlighting and handling changes
-require "user.bufferline" -- awesome tabs (buffers) at the top Shifts+j/l to navigate,
+require "user.bufferline" -- awesome tabs (buffers) at the top Shifts+k/l to navigate,
 -- <leader>c to close the buffer, <leader>b to search through the buffers
 require "user.alpha" -- awesome greeter, press <leader>a or launch nvim
 require "user.project" -- project manager, press <leader>P
-require "user.which-key" -- hints for available key-combinations (activates on <leader> key)
+require "user.which-key" -- hints for available key-combinations, emacs-like (activates on <leader> key)
 require "user.indentline" -- line indentation in code blocks
 require "user.toggleterm" -- <leader>t to check available options
-require "user.dap" -- debug tool
+require "user.dap" -- powerful debugging tool, see <leader>d for more options
 
 -- TODO:
 -- 0) MUST HAVE: venv should be shown at the lualine
@@ -37,10 +37,10 @@ require "user.dap" -- debug tool
 -- 2) ✓ shortcuts in terminal (toggleterm);
 -- 3) ✓ mb set default venv for python (3.10 for now)?
 -- 4) ✓ python autoindent (when pressing Return inside the code block);
--- 5) configure pyright;
--- 6) configure rust_analyzer;
--- 7) configure bufferline;
--- 8) lazygit + gitsigns;
+-- 5) configure pyright (but the basic setup is more than enough);
+-- 6) configure rust_analyzer (rust-tools);
+-- 7) ✓ configure bufferline;
+-- 8) figure out lazygit + gitsigns combination;
 
 -- WANNA INSTALL
 --
