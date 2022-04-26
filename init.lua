@@ -32,16 +32,15 @@ require "user.dap" -- powerful debugging tool, see <leader>d for more options
 require "user.lazygit" -- git util, TODO: need more setup (~/.config/lazygit/config.yml) and study
 
 -- TODO:
--- 0) MUST HAVE: venv should be shown at the lualine
--- 1) automatically activate venv on project entry;
+-- 0) MUST HAVE: venv should be shown at the lualine;
+-- 1) automatically activate venv on project entry (mb project plugin);
+-- 2) dap test integration;
+-- 3) check if some plugins can be lazyloaded;
+-- 4) write README for this repo;
 --
--- 2) ✓ shortcuts in terminal (toggleterm);
--- 3) ✓ mb set default venv for python (3.10 for now)?
--- 4) ✓ python autoindent (when pressing Return inside the code block);
--- 5) configure pyright (but the basic setup is more than enough);
--- 6) configure rust_analyzer (rust-tools);
--- 7) ✓ configure bufferline;
--- 8) figure out lazygit + gitsigns combination, LAZYGIT seems to not work with the basic shortcuts;
+-- 7) configure pyright (but the basic setup is more than enough);
+-- 8) configure rust_analyzer (rust-tools);
+-- 9) figure out lazygit + gitsigns combination;
 
 -- WANNA INSTALL
 --

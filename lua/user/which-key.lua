@@ -112,14 +112,14 @@ local mappings = {
     },
 
     -- Debuggig keys
-    ["b"] = {"<cmd>DapToggleBreakpoint<cr>", "Breakpoint"},
+    ["b"] = {"<cmd>lua require'dap'.toggle_breakpoint();store_breakpoints(false)<cr>", "Breakpoint"},
     ["i"] = {"<cmd>DapStepInto<cr>", "Step into"},
     ["o"] = {"<cmd>DapStepOver<cr>", "Step over"},
     ["O"] = {"<cmd>DapStepOut<cr>", "Step out"},
     d = {
         name = "Debug",
-        d = {"<cmd>w<cr><cmd><cmd>DapContinue<cr>", "Debug/Continue"},
-        D = {"<cmd>lua require'dap'.clear_breakpoints()<cr>", "Delete breakpoints"},
+        d = {"<cmd>w<cr><cmd>DapContinue<cr>", "Debug/Continue"},
+        D = {"<cmd>lua require'dap'.clear_breakpoints();store_breakpoints(true)<cr>", "Delete breakpoints"},
         r = {"<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to cursor"},
         R = {"<cmd>DapToggleRepl<cr>", "Repl"},
         c = {"<cmd>Telescope dap commands<cr>", "Commands"},
@@ -150,7 +150,6 @@ local mappings = {
         name = "Git",
         g = { "<cmd>LazyGit<CR>", "Lazygit" },
         v = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "View repos" },
-        -- G = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" }, -- not a good way to run lazygit, a lot of shortcuts just becomes broken for the tool
         k = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         l = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
         h = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },

@@ -24,7 +24,7 @@ project.setup({
 	detection_methods = { "pattern" },
 
 	---@usage patterns used to detect root dir, when **"pattern"** is in detection_methods
-	patterns = { ".git", "requirements.txt", "Makefile", "package.json", "venv", "env", "Cargo.toml", ".toml", "pyrightconfig.json" },
+	patterns = { ".git", "requirements.txt", "Makefile", "package.json", "Cargo.toml", ".toml" },
 
 	---@ Show hidden files in telescope when searching for files in a project
 	show_hidden = false,
