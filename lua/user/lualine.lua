@@ -62,6 +62,17 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local venv = function()
+    if vim.env.VIRTUAL_ENV then
+        local last
+        for el in string.gmatch(vim.env.VIRTUAL_ENV, '([^/]+)') do
+            last = el
+        end
+        return "🐍 " .. last
+    end
+    return ""
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -76,7 +87,7 @@ lualine.setup({
 		lualine_b = { mode },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_x = { diff, spaces, "encoding", filetype, venv },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},

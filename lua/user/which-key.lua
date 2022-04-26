@@ -95,7 +95,7 @@ local mappings = {
     },
 
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-    ["R"] = { "<cmd>luafile %<CR>", "Reload lua" },
+    ["R"] = { "<cmd>w<cr><cmd>luafile %<CR>", "Reload lua" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {
         "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
