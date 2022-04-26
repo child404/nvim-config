@@ -100,11 +100,15 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-    -- Debug
+    -- Debugging
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- UI for dap
     use "theHamsta/nvim-dap-virtual-text" -- display variables while debugging
     use "nvim-telescope/telescope-dap.nvim" -- integration with telescope (Telescope dap ...)
     use "mfussenegger/nvim-dap-python" -- python integration with dap
+
+    -- Testing
+    -- check out https://github.com/rcarriga/vim-ultest and https://github.com/rcarriga/vim-ultest/wiki/Debugging-Recipes
+    use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
 
     -- Rust
     -- use "simrat39/rust-tools.nvim" -- Additional rust features such as inlay hints
