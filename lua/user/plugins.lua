@@ -62,6 +62,7 @@ return packer.startup(function(use)
 
     -- Git (may be some more plugins here), awesome in combination with lazygit
     use "lewis6991/gitsigns.nvim"
+    use "kdheepak/lazygit.nvim"
 
     -- Telescope (media files doesnt work without ueberzug)
     use "nvim-telescope/telescope.nvim" -- fuzzy finder
@@ -101,7 +102,7 @@ return packer.startup(function(use)
 
     -- Debug
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- UI for dap
-    use "theHamsta/nvim-dap-virtual-text"
+    use "theHamsta/nvim-dap-virtual-text" -- display variables while debuggins
     use "nvim-telescope/telescope-dap.nvim" -- integration with telescope (Telescope dap ...)
     use "mfussenegger/nvim-dap-python" -- python integration with dap
 

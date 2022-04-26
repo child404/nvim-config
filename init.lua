@@ -29,6 +29,7 @@ require "user.which-key" -- hints for available key-combinations, emacs-like (ac
 require "user.indentline" -- line indentation in code blocks
 require "user.toggleterm" -- <leader>t to check available options
 require "user.dap" -- powerful debugging tool, see <leader>d for more options
+require "lazygit" -- git util
 
 -- TODO:
 -- 0) MUST HAVE: venv should be shown at the lualine
@@ -40,7 +41,7 @@ require "user.dap" -- powerful debugging tool, see <leader>d for more options
 -- 5) configure pyright (but the basic setup is more than enough);
 -- 6) configure rust_analyzer (rust-tools);
 -- 7) ✓ configure bufferline;
--- 8) figure out lazygit + gitsigns combination;
+-- 8) figure out lazygit + gitsigns combination, LAZYGIT seems to not work with the basic shortcuts;
 
 -- WANNA INSTALL
 --

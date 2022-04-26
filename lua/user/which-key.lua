@@ -106,9 +106,9 @@ local mappings = {
 
     r = {
         name = "Run",
-        p = { "<cmd>exe v:count1 . \"TermExec cmd='python %' go_back=0 size=15 direction='horizontal'\"<cr>", "Python" },
-        r = { "<cmd>exe v:count1 . \"TermExec cmd='cargo run' go_back=0 size=15 direction='horizontal'\"<cr>", "Rust" },
-        c = {"<cmd>exe v:count1 . \"TermExec cmd='make && ./a.out' go_back=0 size=15 direction='horizontal'\"<cr>", "C/C++"}
+        p = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python %' go_back=0 size=15 direction='horizontal'\"<cr>", "Python" },
+        r = { "<cmd>w<cr><cmd><cmd>exe v:count1 . \"TermExec cmd='cargo run' go_back=0 size=15 direction='horizontal'\"<cr>", "Rust" },
+        c = {"<cmd>w<cr><cmd><cmd>exe v:count1 . \"TermExec cmd='make && ./a.out' go_back=0 size=15 direction='horizontal'\"<cr>", "C/C++"}
     },
 
     -- Debuggig keys
@@ -118,7 +118,7 @@ local mappings = {
     ["O"] = {"<cmd>DapStepOut<cr>", "Step out"},
     d = {
         name = "Debug",
-        d = {"<cmd>DapContinue<cr>", "Debug/Continue"},
+        d = {"<cmd>w<cr><cmd><cmd>DapContinue<cr>", "Debug/Continue"},
         D = {"<cmd>lua require'dap'.clear_breakpoints()<cr>", "Delete breakpoints"},
         r = {"<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to cursor"},
         R = {"<cmd>DapToggleRepl<cr>", "Repl"},
@@ -148,7 +148,9 @@ local mappings = {
     -- Git
     g = {
         name = "Git",
-        g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+        g = { "<cmd>LazyGit<CR>", "Lazygit" },
+        v = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "View repos" },
+        -- G = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" }, -- not a good way to run lazygit, a lot of shortcuts just becomes broken for the tool
         k = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         l = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
         h = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -216,7 +218,7 @@ local mappings = {
     -- Terminal
     t = {
         name = "Terminal",
-        t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+        T = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" }, -- the same as for lazygit, shortcuts are broken due to vim normal mode
         p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
         h = { "<cmd>exec v:count1 . \"ToggleTerm size=15 direction=horizontal\"<cr>", "Horizontal" },
