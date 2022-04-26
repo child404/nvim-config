@@ -33,8 +33,8 @@ require "user.lazygit" -- git util, TODO: need more setup (~/.config/lazygit/con
 require "user.nvim-venom" -- automatically detect python virtualenv
 
 -- TODO:
--- 0) MUST HAVE: venv should be shown at the lualine;
--- 1) automatically activate venv on project entry (mb project plugin);
+-- 0) + MUST HAVE: venv should be shown at the lualine;
+-- 1) + automatically activate venv on project entry (mb project plugin);
 -- 2) dap test integration;
 -- 3) check if some plugins can be lazyloaded;
 -- 4) write README for this repo;
