@@ -25,10 +25,8 @@ function _G.store_breakpoints(clear)
 end
 
 function _G.load_breakpoints()
-    local fp = io.open(HOME .. breakpoints_fp, 'r')
-    local content = fp:read('*a')
+    local content = io.open(HOME .. breakpoints_fp, 'r'):read('*a')
     if string.len(content) == 0 then
-        fp:close()
         return
     end
     local bps = vim.fn.json_decode(content)
