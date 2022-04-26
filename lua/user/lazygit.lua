@@ -1,4 +1,4 @@
-local lazygit_status_ok, lazygit = pcall(require, "lazygit")
+local lazygit_status_ok, _ = pcall(require, "lazygit")
 if not lazygit_status_ok then
     return
 end
