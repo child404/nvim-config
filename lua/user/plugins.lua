@@ -102,7 +102,7 @@ return packer.startup(function(use)
 
     -- Debug
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- UI for dap
-    use "theHamsta/nvim-dap-virtual-text" -- display variables while debuggins
+    use "theHamsta/nvim-dap-virtual-text" -- display variables while debugging
     use "nvim-telescope/telescope-dap.nvim" -- integration with telescope (Telescope dap ...)
     use "mfussenegger/nvim-dap-python" -- python integration with dap
 

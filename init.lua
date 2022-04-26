@@ -29,7 +29,7 @@ require "user.which-key" -- hints for available key-combinations, emacs-like (ac
 require "user.indentline" -- line indentation in code blocks
 require "user.toggleterm" -- <leader>t to check available options
 require "user.dap" -- powerful debugging tool, see <leader>d for more options
-require "lazygit" -- git util
+require "lazygit" -- git util, TODO: need more setup (~/.config/lazygit/config.yml) and study
 
 -- TODO:
 -- 0) MUST HAVE: venv should be shown at the lualine
