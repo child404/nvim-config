@@ -7,7 +7,6 @@ local function get_python_path ()
     return "/bin/usr/python"
 end
 
-
 return {
     before_init = function(_, config)
         config.settings.python.pythonPath = get_python_path()
