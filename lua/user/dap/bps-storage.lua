@@ -4,7 +4,7 @@ local breakpoints_fp = os.getenv("HOME") .. '/.cache/dap/breakpoints.json'
 function _G.store_breakpoints(clear)
     local load_bps_raw = io.open(breakpoints_fp, 'r'):read("*a")
     local bps = {}
-    if string.len(load_bps_raw) ~= 0 then
+    if string.len(load_bps_raw) ~= 0 then -- empty string causes an error when decoding json
         bps = vim.fn.json_decode(load_bps_raw)
     end
     if clear then
