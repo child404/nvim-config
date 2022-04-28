@@ -186,11 +186,11 @@ local mappings = {
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
         k = {
-            "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+            "<cmd>lua vim.diagnostic.goto_next()<CR>",
             "Next Diagnostic",
         },
         l = {
-            "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+            "<cmd>lua vim.diagnostic.goto_prev()<cr>",
             "Prev Diagnostic",
         },
         c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
