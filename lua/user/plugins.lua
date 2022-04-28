@@ -90,6 +90,8 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp" -- lsp completions
+    use {'tzachar/cmp-tabnine', run='./install.sh' }
+
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
@@ -106,12 +108,11 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-dap.nvim" -- integration with telescope (Telescope dap ...)
     use "mfussenegger/nvim-dap-python" -- python integration with dap
 
-    -- vim.g.venom_loaded = 1
     use { 'rafi/vim-venom', ft = { 'python' }, config = 'require("venom").setup()' }
 
     -- Testing
     -- check out https://github.com/rcarriga/vim-ultest and https://github.com/rcarriga/vim-ultest/wiki/Debugging-Recipes
-    use { "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" }
+    -- use { "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" }
 
     -- Rust
     -- use "simrat39/rust-tools.nvim" -- Additional rust features such as inlay hints

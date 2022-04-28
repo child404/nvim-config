@@ -13,7 +13,7 @@ map("", ";", "l", opts)
 map("", "l", "k", opts)
 map("", "k", "j", opts)
 map("", "j", "h", opts)
-map("i", "<C-j>", "<C-h>", opts)
+map("i", "<C-j>", "<BS>", {silent=true})
 
 -- Easier window navigation
 map("n", "<C-j>", "<C-w>h", opts)
