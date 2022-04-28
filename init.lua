@@ -35,13 +35,15 @@ require "user.nvim-venom" -- automatically detect python virtualenv
 -- TODO:
 -- 0) + MUST HAVE: venv should be shown at the lualine;
 -- 1) + automatically activate venv on project entry (mb project plugin);
--- 2) dap test integration;
--- 3) check if some plugins can be lazyloaded;
--- 4) write README for this repo;
+-- 2) write a plugin to store virtualenvs (mb just use pyenv) and get them using telescope (like activate through the telescope)
+--    activation etc. will be done by the vim-venom plugin (fork?)
+-- 3) dap test integration;
+-- 4) check if some plugins can be lazyloaded;
+-- 5) write README for this repo;
 --
--- 7) configure pyright (but the basic setup is more than enough);
--- 8) configure rust_analyzer (rust-tools);
--- 9) figure out lazygit + gitsigns combination;
+-- 6) configure pyright (but the basic setup is more than enough);
+-- 7) configure rust_analyzer (rust-tools);
+-- 8) figure out lazygit + gitsigns combination;
 
 -- WANNA INSTALL
 --
