@@ -35,8 +35,13 @@ require "user.nvim-venom" -- automatically detect python virtualenv
 -- TODO:
 -- 0) + MUST HAVE: venv should be shown at the lualine;
 -- 1) + automatically activate venv on project entry (mb project plugin);
--- 2) write a plugin to store virtualenvs (mb just use pyenv) and get them using telescope (like activate through the telescope)
---    activation etc. will be done by the vim-venom plugin (fork?)
+--
+-- 2) write a plugin to store virtualenvs (mb just use pyenv) and get them using telescope (like activate through the telescope);
+--    activation etc. will be done by the vim-venom plugin (fork?);
+--    to not activate venv through searching some venv dir, but to select venv for the project and store its {path_to_project: venv_name};
+--    then just restore the latest venv used for current project;
+--    but save the option to just activate env that was found for the file (if project is not found) by the vim-venom;
+--
 -- 3) dap test integration;
 -- 4) check if some plugins can be lazyloaded;
 -- 5) write README for this repo;

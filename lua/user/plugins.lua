@@ -91,6 +91,7 @@ return packer.startup(function(use)
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp" -- lsp completions
     use {'tzachar/cmp-tabnine', run='./install.sh' }
+    use "hrsh7th/cmp-nvim-lua"
 
 
     -- snippets
