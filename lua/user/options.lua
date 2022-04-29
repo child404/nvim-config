@@ -63,6 +63,13 @@ end
 cmd "set whichwrap+=<,>,[,],h,l"
 cmd [[set iskeyword+=-]]
 
+-- PYTHON SET UP - delete trailing whitespaces - indentation based on python keywords
+cmd [[
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 smarttab expandtab autoindent
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+]]
+
 -- Access to Windows clipboard
 cmd [[
 let s:clip = '/mnt/c/Windows/System32/clip.exe'
