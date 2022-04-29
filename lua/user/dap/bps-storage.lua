@@ -1,12 +1,21 @@
 local breakpoints = require('dap.breakpoints')
 local breakpoints_fp = os.getenv("HOME") .. '/.cache/dap/breakpoints.json'
 
+local function file_exist(file_path)
+    local f = io.open(file_path, "r")
+    return f ~= nil and io.close(f)
+end
+
 function _G.store_breakpoints(clear)
-    local load_bps_raw = io.open(breakpoints_fp, 'r'):read("*a")
     local bps = {}
-    if string.len(load_bps_raw) ~= 0 then -- empty string causes an error when decoding json
-        bps = vim.fn.json_decode(load_bps_raw)
+
+    if file_exist(breakpoints_fp) then
+        local load_bps_raw = io.open(breakpoints_fp, 'r'):read("*a")
+        if string.len(load_bps_raw) ~= 0 and file_exist(breakpoints_fp) then -- empty string causes an error when decoding json
+            bps = vim.fn.json_decode(load_bps_raw)
+        end
     end
+
     if clear then
         for _, bufrn in ipairs(vim.api.nvim_list_bufs()) do
             bps[vim.api.nvim_buf_get_name(bufrn)] = nil
@@ -23,6 +32,9 @@ function _G.store_breakpoints(clear)
 end
 
 function _G.load_breakpoints()
+    if not file_exist(breakpoints_fp) then
+        return
+    end
     local content = io.open(breakpoints_fp, 'r'):read('*a')
     if string.len(content) == 0 then
         return
