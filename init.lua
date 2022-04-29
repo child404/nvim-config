@@ -18,8 +18,8 @@ require "user.nvim-autopairs" -- auto close parentheses and wrap sumbols in quot
 require "user.telescope" -- fuzzy finder, <leader>f/F/P/s to check available options
 require "user.highlightedyank" -- highlight lines you yanked
 require "user.treesitter" -- helps to better highlight syntax and context comments
-require "user.comment" -- comment single line by pressing gcc, indent lines and press
--- gc in visual mode to comment multiple lines
+require "user.comment" -- comment single line by pressing gj, indent lines and press
+-- gc in visual mode to comment multiple lines, more powerful comments in normal mode
 require "user.gitsigns" -- git highlighting and handling changes
 require "user.bufferline" -- awesome tabs (buffers) at the top Shifts+k/l to navigate,
 -- <leader>c to close the buffer, <leader>b to search through the buffers
