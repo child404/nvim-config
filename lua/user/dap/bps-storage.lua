@@ -9,11 +9,9 @@ end
 function _G.store_breakpoints(clear)
     local bps = {}
 
-    if file_exist(breakpoints_fp) then
-        local load_bps_raw = io.open(breakpoints_fp, 'r'):read("*a")
-        if string.len(load_bps_raw) ~= 0 and file_exist(breakpoints_fp) then -- empty string causes an error when decoding json
-            bps = vim.fn.json_decode(load_bps_raw)
-        end
+    local load_bps_raw = io.open(breakpoints_fp, 'r'):read("*a")
+    if string.len(load_bps_raw) ~= 0 and file_exist(breakpoints_fp) then -- empty string causes an error when decoding json
+        bps = vim.fn.json_decode(load_bps_raw)
     end
 
     if clear then
@@ -27,8 +25,10 @@ function _G.store_breakpoints(clear)
         end
     end
     local fp = io.open(breakpoints_fp, 'w')
-    fp:write(vim.fn.json_encode(bps))
-    fp:close()
+    if fp ~= nil then
+        fp:write(vim.fn.json_encode(bps))
+        fp:close()
+    end
 end
 
 function _G.load_breakpoints()
