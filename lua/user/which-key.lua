@@ -107,8 +107,8 @@ local mappings = {
     r = {
         name = "Run",
         p = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python %' go_back=0 size=15 direction='horizontal'\"<cr>", "Python" },
-        r = { "<cmd>w<cr><cmd><cmd>exe v:count1 . \"TermExec cmd='cargo run' go_back=0 size=15 direction='horizontal'\"<cr>", "Rust" },
-        c = {"<cmd>w<cr><cmd><cmd>exe v:count1 . \"TermExec cmd='make && ./a.out' go_back=0 size=15 direction='horizontal'\"<cr>", "C/C++"}
+        r = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='cargo run ' go_back=0 size=15 direction='horizontal'\"<cr>", "Rust" },
+        c = {"<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='make && ./a.out' go_back=0 size=15 direction='horizontal'\"<cr>", "C/C++"}
     },
 
     -- Debuggig keys
