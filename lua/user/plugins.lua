@@ -108,7 +108,11 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-dap.nvim" -- integration with telescope (Telescope dap ...)
     use "mfussenegger/nvim-dap-python" -- python integration with dap
 
+    -- autovenv for python
     use { 'rafi/vim-venom', ft = { 'python' }, config = 'require("venom").setup()' }
+    -- autoindent for python
+    use "Vimjas/vim-python-pep8-indent"
+
 
     -- Testing
     -- check out https://github.com/rcarriga/vim-ultest and https://github.com/rcarriga/vim-ultest/wiki/Debugging-Recipes
