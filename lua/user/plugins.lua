@@ -113,7 +113,6 @@ return packer.startup(function(use)
     -- autoindent for python
     use "Vimjas/vim-python-pep8-indent"
 
-
     -- Testing
     -- check out https://github.com/rcarriga/vim-ultest and https://github.com/rcarriga/vim-ultest/wiki/Debugging-Recipes
     -- use { "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" }
