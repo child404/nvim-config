@@ -106,9 +106,9 @@ local mappings = {
 
     r = {
         name = "Run",
-        p = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python %' go_back=0 size=15 direction='horizontal'\"<cr>", "Python" },
-        r = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='cargo run ' go_back=0 size=15 direction='horizontal'\"<cr>", "Rust" },
-        c = {"<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='make && ./a.out' go_back=0 size=15 direction='horizontal'\"<cr>", "C/C++"}
+        p = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python %' size=15 direction='float'\"<cr>", "Python" },
+        r = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='cargo run ' size=15 direction='float'\"<cr>", "Rust" },
+        c = {"<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='make && ./a.out' size=15 direction='float'\"<cr>", "C/C++"}
     },
 
     -- Debuggig keys
@@ -133,6 +133,15 @@ local mappings = {
         e = {"<cmd>lua require('dapui').eval()<cr>", "Eval/Inspect"},
         C = {"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Condition breakpoint"},
         L = {"<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", "Log breakpoint"},
+    },
+
+    -- DBUI keys
+    x = {
+        name = "Databases",
+        u = {"<cmd>DBUIToggle<CR>", "Toggle UI"},
+        f = {"<cmd>DBUIFindBuffer<CR>", "Find buffer"},
+        r = {"<cmd>DBUIRenameBuffer<CR>", "Rename buffer"},
+        l = {"<cmd>DBUILastQueryInfo<CR>", "Last query"},
     },
 
     -- Packer
@@ -173,34 +182,38 @@ local mappings = {
     -- LSP
     l = {
         name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
         d = {
-            "<cmd>Telescope lsp_document_diagnostics<cr>",
+            "<cmd>Trouble document_diagnostics<cr>",
             "Document Diagnostics",
         },
         w = {
-            "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+            "<cmd>Trouble workspace_diagnostics<cr>",
             "Workspace Diagnostics",
         },
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+        F = { "<cmd>Lspsaga lsp_finder<cr>", "Find definition"},
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
         k = {
-            "<cmd>lua vim.diagnostic.goto_next()<CR>",
+            "<cmd>Lspsaga diagnostic_jump_next<cr>",
             "Next Diagnostic",
         },
         l = {
-            "<cmd>lua vim.diagnostic.goto_prev()<cr>",
+            "<cmd>Lspsaga diagnostic_jump_prev<cr>",
             "Prev Diagnostic",
         },
         c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
         q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        r = { "<cmd>Lspsaga rename<cr>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
             "Workspace Symbols",
         },
+        n = {"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", "Doc scroll down"},
+        p = {"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", "Doc scroll up"},
+        D = {"<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", "Preview definition"}
     },
     s = {
         name = "Search",

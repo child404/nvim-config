@@ -104,6 +104,7 @@ cmp.setup {
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[Lua]",
+        ["vim-dadbod-completion"] = "[DB]",
         luasnip = "[Snippet]",
         cmp_tabnine = "[TabNine]",
         buffer = "[Buffer]",
@@ -119,6 +120,7 @@ cmp.setup {
     { name = "cmp_tabnine" },
     { name = "buffer" },
     { name = "path" },
+    { name = "vim-dadbod-completion" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

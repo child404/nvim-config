@@ -21,7 +21,7 @@ local options = {
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
 
-    colorcolumn = "80", -- show col for max num of lines
+    colorcolumn = "120", -- show col for max num of lines
     number = true, -- show line numbers
     relativenumber = true, -- show relative line numbers
     scrolloff = 7, -- when to stop scrolling (lines before the bottom)

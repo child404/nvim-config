@@ -101,12 +101,21 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use "folke/trouble.nvim" -- lsp list of diagnostic
+    use "ray-x/lsp_signature.nvim" -- lsp function signature
+    use "tami5/lspsaga.nvim" -- cool replacement of main lsp functionality (hover/signature/etc)
+    -- use "chrisbra/csv.vim"
 
     -- Debugging
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } } -- UI for dap
     use "theHamsta/nvim-dap-virtual-text" -- display variables while debugging
     use "nvim-telescope/telescope-dap.nvim" -- integration with telescope (Telescope dap ...)
     use "mfussenegger/nvim-dap-python" -- python integration with dap
+
+    -- SQL databases with neovim
+    use "tpope/vim-dadbod" -- core sql worker
+    use "kristijanhusak/vim-dadbod-ui" -- ui for the dadbod
+    use "kristijanhusak/vim-dadbod-completion" -- cmp for the sql
 
     -- autovenv for python
     use { 'rafi/vim-venom', ft = { 'python' }, config = 'require("venom").setup()' }

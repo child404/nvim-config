@@ -86,7 +86,10 @@ lualine.setup({
         theme = "auto",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
-        disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+        disabled_filetypes = {
+            "alpha", "dashboard", "NvimTree", "Outline", "toggleterm",
+            -- "dapui_breakpoints", "dapui_scopes", "dapui_stacks", "dapui_watches", "dap-repl",
+        },
         always_divide_middle = true,
     },
     sections = {
