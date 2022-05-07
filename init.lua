@@ -31,10 +31,15 @@ require "user.toggleterm" -- <leader>t to check available options
 require "user.dap" -- powerful debugging tool, see <leader>d for more options
 require "user.lazygit" -- lazygit integration with neovim
 require "user.nvim-venom" -- automatically detect python virtualenv
+require "user.nvim-trouble" -- open diagnostic list
+require "user.nvim-lsp-signature" -- live signature for functions
+require "user.lsp-saga"
+
+-- require "user.nvim-lsp-status" -- figure out how does it work
+-- require "user.csvtools"
 
 -- TODO:
--- 0) + MUST HAVE: venv should be shown at the lualine;
--- 1) + automatically activate venv on project entry (mb project plugin);
+-- 1) Install more plugins from https://github.com/cwebster2/vim/blob/main/lua/cwebster/plugins.lua
 --
 -- 2) write a plugin to store virtualenvs (mb just use pyenv) and get them using telescope (like activate through the telescope);
 --    activation etc. will be done by the vim-venom plugin (fork?);
