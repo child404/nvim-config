@@ -12,6 +12,6 @@ null_ls.setup({
     debug = true,
     sources = {
         formatting.black.with({ extra_args = { "--fast" } }),
-        diagnostics.flake8
+        diagnostics.flake8.with({ extra_args = {"--max-line-length=119"} })
     },
 })
