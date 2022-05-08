@@ -73,6 +73,7 @@ return packer.startup(function(use)
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use "numToStr/Comment.nvim" -- commenting stuff
     use "JoosepAlviste/nvim-ts-context-commentstring" -- commenting depends on context
+    use "p00f/nvim-ts-rainbow" -- highlight brackets by different colors
 
     -- Buffer
     use "akinsho/bufferline.nvim"
@@ -81,6 +82,7 @@ return packer.startup(function(use)
     -- Colorschemes
     use "RRethy/nvim-base16" -- base16 colorschemes
     use "lunarvim/darkplus.nvim" -- vscode-like colorscheme
+    use "LunarVim/Colorschemes"
     use "Mofiqul/vscode.nvim" -- vscode-like colorscheme, more support/commits than previous
 
     -- cmp plugins

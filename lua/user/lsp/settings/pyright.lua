@@ -13,10 +13,10 @@ return {
         python = {
             analysis = {
                 -- typeCheckingMode = "none",
-                reportUnusedImport = "none",
-                reportUnusedVariable = "none",
-                reportUnusedFunction = "none",
-                reportUnusedClass = "none",
+                reportUnusedImport = "off",
+                reportUnusedVariable = "off",
+                reportUnusedFunction = "off",
+                reportUnusedClass = "off",
             },
         }
     },
