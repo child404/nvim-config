@@ -104,11 +104,27 @@ local mappings = {
     ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
     ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
+    ["X"] = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python %' size=15 direction='float'\"<cr>", "Run python" },
+
     r = {
-        name = "Run",
-        p = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python %' size=15 direction='float'\"<cr>", "Python" },
-        r = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='cargo run ' size=15 direction='float'\"<cr>", "Rust" },
-        c = {"<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='make && ./a.out' size=15 direction='float'\"<cr>", "C/C++"}
+        name = "Rust",
+        a = {"<cmd>RustCodeAction<cr>", "Code Action"},
+        E = {"<cmd>RustExpand<cr>", "Expand"},
+        e = {"<cmd>RustExpandMacro<cr>", "Expand Macro"},
+        f = {"<cmd>RustFmt<cr>", "Format"},
+        F = {"<cmd>RustFmtRange<cr>", "Format Range"},
+        h = {"<cmd>RustHoverActions<cr>", "Hover Actions"},
+        u = {"<cmd>RustMoveItemUp<cr>", "Move Item Up"},
+        d = {"<cmd>RustMoveItemDown<cr>", "Move Item Down"},
+        D = {"<cmd>RustDebuggables<cr>", "Debuggables"},
+        c = {"<cmd>RustOpenCargo<cr>", "Cargo.toml"},
+        r = {"<cmd>RustRun<cr>", "Run"},
+        R = {"<cmd>RustRunnables<cr>", "Runnables"},
+        w = {"<cmd>RustReloadWorkspace<cr>", "Reload Workspace"},
+        s = {"<cmd>RustSSR<cr>", "SSR"},
+        g = {"<cmd>RustViewCrateGraph<cr>", "Crate Graph"},
+        j = {"<cmd>RustJoinLines<cr>", "Join Lines"},
+        p = {"<cmd>RustParentModule<cr>", "Parent Module"},
     },
 
     -- Debuggig keys

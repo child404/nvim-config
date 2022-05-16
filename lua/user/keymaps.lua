@@ -31,6 +31,11 @@ map("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-k>", ":bprevious<CR>", opts)
 
+vim.cmd [[
+    autocmd FileType python map <buffer> <C-X> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+    autocmd FileType python imap <buffer> <C-X> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+]]
+
 -- Easier save/close
 -- map("n", "<leader>qq", ":q<CR>", opts)
 -- map("n", "<leader>ww", ":w<CR>", opts)
@@ -52,4 +57,4 @@ map("n", "<S-k>", ":bprevious<CR>", opts)
 
 -- Disable highlighted search items by leader + Space
 -- <leader>h specified in the which-keys plugin
-map("n", "<leader><Space>", ":nohlsearch<CR>", opts)
+-- map("n", "<leader><Space>", ":nohlsearch<CR>", opts)

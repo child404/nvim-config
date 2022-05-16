@@ -9,6 +9,7 @@ require "user.dap.dap-python" -- basic dap settings for python, uses debugpy as 
 require "user.dap.dapui" -- simple ui for dap
 require "user.dap.dap-virtual-text" -- active variables are shown while debugging
 require "user.dap.bps-storage" -- stores and loads breakpoints from ~/.cache/dap/breakpoints.json
+require "user.dap.dap-rust"
 
 vim.cmd [[
 autocmd BufRead * :lua load_breakpoints()

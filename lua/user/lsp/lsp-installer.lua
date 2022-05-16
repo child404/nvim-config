@@ -12,12 +12,6 @@ lsp_installer.on_server_ready(function(server)
         capabilities = require("user.lsp.handlers").capabilities,
     }
 
-    -- -- Setup for particular server
-    -- if server.name == "rust_analyzer" then
-    --     local rust_analyzer_opts = require("user.lsp.settings.rust_analyzer")
-    --     opts = vim.tbl_deep_extend("force", rust_analyzer_opts, opts)
-    -- end
-
     if server.name == "pyright" then
         local pyright_opts = require("user.lsp.settings.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)

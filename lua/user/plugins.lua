@@ -50,7 +50,8 @@ return packer.startup(function(use)
     use "lewis6991/impatient.nvim" -- speed up plugin loading
 
     use "goolord/alpha-nvim" -- awesome greeter (at startup)
-    use "danilamihailov/beacon.nvim" -- lighting cursor on jumps
+    -- use "danilamihailov/beacon.nvim" -- lighting cursor on jumps
+    -- use 'edluffy/specs.nvim'
     use "machakann/vim-highlightedyank" -- highlight lines you yanked
     use "windwp/nvim-autopairs" -- automatically (smart) close brackets
     use "nvim-lualine/lualine.nvim" -- cool status line
@@ -82,17 +83,19 @@ return packer.startup(function(use)
     -- Colorschemes
     use "RRethy/nvim-base16" -- base16 colorschemes
     use "lunarvim/darkplus.nvim" -- vscode-like colorscheme
-    use "LunarVim/Colorschemes"
-    use "Mofiqul/vscode.nvim" -- vscode-like colorscheme, more support/commits than previous
+    use "navarasu/onedark.nvim"
+    use "tiagovla/tokyodark.nvim"
+    use 'folke/tokyonight.nvim'
 
     -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
+    -- use {"hrsh7th/nvim-cmp", commit="5054c1449079e0cb293f8648f976acc1796ebb91"} -- The completion plugin
+    use {"hrsh7th/nvim-cmp", commit="9a0c639ac2324e6e9ecc54dc22b1d32bb6c42ab9"} -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp" -- lsp completions
-    use {'tzachar/cmp-tabnine', run='./install.sh' }
+    use { 'tzachar/cmp-tabnine', run = './install.sh' }
     use "hrsh7th/cmp-nvim-lua"
 
     -- snippets
@@ -129,7 +132,9 @@ return packer.startup(function(use)
     -- use { "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" }
 
     -- Rust
-    -- use "simrat39/rust-tools.nvim" -- Additional rust features such as inlay hints
+    use "mattn/webapi-vim"
+    use "rust-lang/rust.vim"
+    use "simrat39/rust-tools.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
