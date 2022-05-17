@@ -35,6 +35,7 @@ require "user.nvim-trouble" -- open diagnostic list
 require "user.nvim-lsp-signature" -- live signature for functions
 require "user.lsp-saga"
 require "user.rust-tools"
+-- require "user.nvim-transparent"
 
 -- require "user.nvim-lsp-status" -- figure out how does it work
 -- require "user.csvtools"

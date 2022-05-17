@@ -85,7 +85,9 @@ return packer.startup(function(use)
     use "lunarvim/darkplus.nvim" -- vscode-like colorscheme
     use "navarasu/onedark.nvim"
     use "tiagovla/tokyodark.nvim"
-    use 'folke/tokyonight.nvim'
+    use "folke/tokyonight.nvim"
+    use "Shatur/neovim-ayu"
+    -- use "xiyaowong/nvim-transparent"
 
     -- cmp plugins
     -- use {"hrsh7th/nvim-cmp", commit="5054c1449079e0cb293f8648f976acc1796ebb91"} -- The completion plugin
