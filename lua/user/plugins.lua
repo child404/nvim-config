@@ -46,6 +46,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "kyazdani42/nvim-web-devicons" -- icons for nvimtree/lualine
+    use 'sunjon/shade.nvim'
 
     use "lewis6991/impatient.nvim" -- speed up plugin loading
 
@@ -60,10 +61,19 @@ return packer.startup(function(use)
     use "lukas-reineke/indent-blankline.nvim" -- line indentation
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
     use "akinsho/toggleterm.nvim" -- toggle terminal tools
+    use {
+        'VonHeikemen/fine-cmdline.nvim',
+        requires = {
+            { 'MunifTanjim/nui.nvim' }
+        }
+    }
+    use "dstein64/vim-startuptime"
 
     -- Git (may be some more plugins here), awesome in combination with lazygit
     use "lewis6991/gitsigns.nvim"
     use "kdheepak/lazygit.nvim"
+    use "APZelos/blamer.nvim"
+    use "tpope/vim-fugitive"
 
     -- Telescope (media files doesnt work without ueberzug)
     use "nvim-telescope/telescope.nvim" -- fuzzy finder
@@ -83,15 +93,22 @@ return packer.startup(function(use)
     -- Colorschemes
     use "RRethy/nvim-base16" -- base16 colorschemes
     use "lunarvim/darkplus.nvim" -- vscode-like colorscheme
-    use "navarasu/onedark.nvim"
+    -- use "navarasu/onedark.nvim"
     use "tiagovla/tokyodark.nvim"
     use "folke/tokyonight.nvim"
     use "Shatur/neovim-ayu"
+    use 'sainnhe/sonokai'
+    use 'mhartington/oceanic-next'
+    use 'marko-cerovac/material.nvim'
+    use 'https://gitlab.com/__tpb/monokai-pro.nvim'
+    -- use "rebelot/kanagawa.nvim"
+    -- use "catppuccin/nvim"
+
     -- use "xiyaowong/nvim-transparent"
 
     -- cmp plugins
     -- use {"hrsh7th/nvim-cmp", commit="5054c1449079e0cb293f8648f976acc1796ebb91"} -- The completion plugin
-    use {"hrsh7th/nvim-cmp", commit="9a0c639ac2324e6e9ecc54dc22b1d32bb6c42ab9"} -- The completion plugin
+    use { "hrsh7th/nvim-cmp", commit = "9a0c639ac2324e6e9ecc54dc22b1d32bb6c42ab9" } -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -118,6 +135,12 @@ return packer.startup(function(use)
     use "theHamsta/nvim-dap-virtual-text" -- display variables while debugging
     use "nvim-telescope/telescope-dap.nvim" -- integration with telescope (Telescope dap ...)
     use "mfussenegger/nvim-dap-python" -- python integration with dap
+
+    -- Markdown
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
     -- SQL databases with neovim
     use "tpope/vim-dadbod" -- core sql worker

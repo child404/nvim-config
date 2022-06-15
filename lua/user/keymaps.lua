@@ -13,7 +13,7 @@ map("", ";", "l", opts)
 map("", "l", "k", opts)
 map("", "k", "j", opts)
 map("", "j", "h", opts)
-map("i", "<C-j>", "<BS>", {silent=true})
+map("i", "<C-j>", "<BS>", { silent = true })
 
 -- Easier window navigation
 map("n", "<C-j>", "<C-w>h", opts)
@@ -30,6 +30,8 @@ map("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 -- Easier buffer navigation
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-k>", ":bprevious<CR>", opts)
+
+map("n", "<cr>", "<cmd>FineCmdline<CR>", {noremap = true})
 
 vim.cmd [[
     autocmd FileType python map <buffer> <C-X> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>

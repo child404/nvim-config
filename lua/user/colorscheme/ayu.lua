@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 local opts = {
-    mirage = true, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+    mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
     overrides = {
         MatchParen = {bg = "#404755"},
         LspSignatureActiveParameter = {bg = "#404755"},

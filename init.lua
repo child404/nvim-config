@@ -12,6 +12,7 @@ require "user.cmp" -- Autocompletion
 require "user.lsp" -- LSP settings
 
 -- PLUGINS SETUP
+-- require "user.evil-lualine" -- awesome line at the buttom
 require "user.lualine" -- awesome line at the buttom
 require "user.nvim-tree" -- file manager, toggles on <leader>e (nerdtree replacement)
 require "user.nvim-autopairs" -- auto close parentheses and wrap sumbols in quotes (by pressing Alt+e)
@@ -36,6 +37,8 @@ require "user.nvim-lsp-signature" -- live signature for functions
 require "user.lsp-saga"
 require "user.rust-tools"
 -- require "user.nvim-transparent"
+require "user.shade"
+-- require "user.neoscroll"
 
 -- require "user.nvim-lsp-status" -- figure out how does it work
 -- require "user.csvtools"

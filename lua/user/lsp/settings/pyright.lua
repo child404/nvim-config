@@ -12,11 +12,12 @@ return {
     settings = {
         python = {
             analysis = {
-                -- typeCheckingMode = "none",
                 reportUnusedImport = "off",
                 reportUnusedVariable = "off",
                 reportUnusedFunction = "off",
                 reportUnusedClass = "off",
+                typeCheckingMode = 'off',
+                useLibraryCodeForTypes = true,
             },
         }
     },

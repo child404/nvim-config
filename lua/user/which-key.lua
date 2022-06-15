@@ -90,7 +90,7 @@ local mappings = {
     q = {
         name = "Quit",
         q = { "<cmd>q<cr>", "Quit" },
-        w = { "<cmd>wq<cr>", "Save and quit" },
+        w = { "<cmd>wq!<cr>", "Save and quit" },
         d = { "<cmd>q!<cr>", "Quit and discard changes" },
     },
 

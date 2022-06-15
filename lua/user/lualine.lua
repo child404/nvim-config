@@ -10,8 +10,13 @@ end
 local diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    sections = { "error", "warn" },
-    symbols = { error = " ", warn = " " },
+    sections = { "error", "warn", "info" },
+    symbols = { error = ' ', warn = ' ', info = ' ' },
+    -- diagnostics_color = {
+    --     color_error = { fg = '#ec5f67' },
+    --     color_warn = { fg = '#ECBE7B' },
+    --     color_info = { fg = '#008080' },
+    -- },
     colored = false,
     update_in_insert = false,
     always_visible = true,
@@ -19,16 +24,18 @@ local diagnostics = {
 
 local diff = {
     "diff",
-    colored = false,
+    colored = true,
     symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
     cond = hide_in_width
 }
 
 local mode = {
-    "mode",
-    fmt = function(str)
-        return "-- " .. str .. " --"
+    function()
+        return " "
     end,
+    padding = { left = 0, right = 0 },
+    color = {},
+    cond = nil,
 }
 
 local filetype = {
@@ -41,6 +48,7 @@ local branch = {
     "branch",
     icons_enabled = true,
     icon = "",
+    color = { gui = "bold" },
 }
 
 local location = {
@@ -64,7 +72,7 @@ end
 
 local function lsp_provider()
     local clients = {}
-    local icon = ' '
+    local icon = ' LSP: '
     for _, client in pairs(vim.lsp.buf_get_clients()) do
         if client.name == "pyright" then
             if client.config.settings.python["pythonPath"] ~= nil then
@@ -93,9 +101,9 @@ lualine.setup({
         always_divide_middle = true,
     },
     sections = {
-        lualine_a = { branch, diagnostics },
-        lualine_b = { mode },
-        lualine_c = {},
+        lualine_a = { mode },
+        lualine_b = {},
+        lualine_c = { branch, diagnostics },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "encoding", filetype, lsp_provider },
         lualine_y = { location },

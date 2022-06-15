@@ -6,11 +6,15 @@ local cmd = vim.cmd
 vim.g.t_co = 256
 vim.g.background = "dark"
 
+vim.g.blamer_enabled = 1
+vim.g.blamer_delay = 500
+vim.g.blamer_show_in_insert_modes = 0
+
 local options = {
     backup = false, -- no backup
     swapfile = false, -- no swap file
-    clipboard = "unnamedplus", -- access to system clipboard
-    cmdheight = 2, -- more space in command line
+    -- clipboard = "unnamedplus", -- access to system clipboard
+    cmdheight = 1, -- more space in command line
     completeopt = { "menuone", "noselect" }, -- settings for cmp plugin
     mouse = "a", -- enable mouse
     conceallevel = 0, -- so that `` is visible in markdown files
@@ -21,7 +25,7 @@ local options = {
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
 
-    colorcolumn = "120", -- show col for max num of lines
+    colorcolumn = "9000", -- show col for max num of lines
     number = true, -- show line numbers
     relativenumber = true, -- show relative line numbers
     scrolloff = 7, -- when to stop scrolling (lines before the bottom)
