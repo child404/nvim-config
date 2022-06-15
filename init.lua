@@ -36,12 +36,8 @@ require "user.nvim-trouble" -- open diagnostic list
 require "user.nvim-lsp-signature" -- live signature for functions
 require "user.lsp-saga"
 require "user.rust-tools"
--- require "user.nvim-transparent"
+require "user.notify"
 require "user.shade"
--- require "user.neoscroll"
-
--- require "user.nvim-lsp-status" -- figure out how does it work
--- require "user.csvtools"
 
 -- TODO:
 -- 1) Install more plugins from https://github.com/cwebster2/vim/blob/main/lua/cwebster/plugins.lua

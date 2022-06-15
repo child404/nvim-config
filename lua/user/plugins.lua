@@ -93,7 +93,6 @@ return packer.startup(function(use)
     -- Colorschemes
     use "RRethy/nvim-base16" -- base16 colorschemes
     use "lunarvim/darkplus.nvim" -- vscode-like colorscheme
-    -- use "navarasu/onedark.nvim"
     use "tiagovla/tokyodark.nvim"
     use "folke/tokyonight.nvim"
     use "Shatur/neovim-ayu"
@@ -101,13 +100,10 @@ return packer.startup(function(use)
     use 'mhartington/oceanic-next'
     use 'marko-cerovac/material.nvim'
     use 'https://gitlab.com/__tpb/monokai-pro.nvim'
-    -- use "rebelot/kanagawa.nvim"
-    -- use "catppuccin/nvim"
 
-    -- use "xiyaowong/nvim-transparent"
+    use "rcarriga/nvim-notify"
 
     -- cmp plugins
-    -- use {"hrsh7th/nvim-cmp", commit="5054c1449079e0cb293f8648f976acc1796ebb91"} -- The completion plugin
     use { "hrsh7th/nvim-cmp", commit = "9a0c639ac2324e6e9ecc54dc22b1d32bb6c42ab9" } -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
