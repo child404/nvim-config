@@ -152,6 +152,13 @@ local mappings = {
         L = {"<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", "Log breakpoint"},
     },
 
+    m = {
+        name = "Markdown",
+        p = {"<cmd>MarkdownPreview<cr>", "Preview"},
+        t = {"<cmd>MarkdownPreviewToggle<cr>", "Toggle"},
+        s = {"<cmd>MarkdownPreviewStop<cr>", "Stop"},
+    },
+
     -- DBUI keys
     x = {
         name = "Databases",

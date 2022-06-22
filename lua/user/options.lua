@@ -9,6 +9,7 @@ vim.g.background = "dark"
 vim.g.blamer_enabled = 1
 vim.g.blamer_delay = 500
 vim.g.blamer_show_in_insert_modes = 0
+vim.g.blamer_show_in_visual_modes = 0
 
 local options = {
     backup = false, -- no backup
@@ -56,6 +57,7 @@ local options = {
 
     splitright = true, -- vsplit window opens at the right
     splitbelow = true, -- hsplit window opens at the bottom
+    guifont = "Liga Hasklug Nerd Font Mono:h12",
 }
 
 opt.shortmess:append "c"

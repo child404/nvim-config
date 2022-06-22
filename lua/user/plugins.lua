@@ -100,8 +100,12 @@ return packer.startup(function(use)
     use 'mhartington/oceanic-next'
     use 'marko-cerovac/material.nvim'
     use 'https://gitlab.com/__tpb/monokai-pro.nvim'
+    use "Mofiqul/dracula.nvim"
+    use 'bluz71/vim-moonfly-colors'
+    use 'olimorris/onedarkpro.nvim'
 
     use "rcarriga/nvim-notify"
+    use "tenxsoydev/size-matters.nvim"
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp", commit = "9a0c639ac2324e6e9ecc54dc22b1d32bb6c42ab9" } -- The completion plugin
@@ -144,7 +148,9 @@ return packer.startup(function(use)
     use "kristijanhusak/vim-dadbod-completion" -- cmp for the sql
 
     -- autovenv for python
+    vim.g.venom_loaded = 1
     use { 'rafi/vim-venom', ft = { 'python' }, config = 'require("venom").setup()' }
+    use {'HallerPatrick/py_lsp.nvim'}
     -- autoindent for python
     use "Vimjas/vim-python-pep8-indent"
 

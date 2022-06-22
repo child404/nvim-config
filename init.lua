@@ -38,6 +38,8 @@ require "user.lsp-saga"
 require "user.rust-tools"
 require "user.notify"
 require "user.shade"
+require "user.size_matters"
+require "user.pylsp"
 
 -- TODO:
 -- 1) Install more plugins from https://github.com/cwebster2/vim/blob/main/lua/cwebster/plugins.lua
