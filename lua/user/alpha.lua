@@ -29,6 +29,13 @@ dashboard.section.header.val = {
   "                                                                                ",
 }
 -- dashboard.section.header.val = {
+-- [[  ____]],
+-- [[ / ___|]],
+-- [[/  | ]],
+-- [[|  | ]],
+-- [[\  |__]],
+-- [[ \____|]],}
+-- dashboard.section.header.val = {
 -- 	[[                               __                ]],
 -- 	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
 -- 	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
@@ -48,10 +55,12 @@ dashboard.section.buttons.val = {
 
 local function footer()
 -- NOTE: requires the fortune-mod package to work
-	-- local handle = io.popen("fortune")
-	-- local fortune = handle:read("*a")
-	-- handle:close()
-	-- return fortune
+	local handle = io.popen("fortune")
+    if handle ~= nil then
+	    local fortune = handle:read("*a")
+	    handle:close()
+	    return fortune
+    end
 	return "github.com/child404"
 end
 

@@ -12,7 +12,6 @@ require "user.cmp" -- Autocompletion
 require "user.lsp" -- LSP settings
 
 -- PLUGINS SETUP
--- require "user.evil-lualine" -- awesome line at the buttom
 require "user.lualine" -- awesome line at the buttom
 require "user.nvim-tree" -- file manager, toggles on <leader>e (nerdtree replacement)
 require "user.nvim-autopairs" -- auto close parentheses and wrap sumbols in quotes (by pressing Alt+e)

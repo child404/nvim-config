@@ -11,10 +11,12 @@ vim.g.blamer_delay = 500
 vim.g.blamer_show_in_insert_modes = 0
 vim.g.blamer_show_in_visual_modes = 0
 
+vim.g.neovide_fullscreen = true
+
 local options = {
     backup = false, -- no backup
     swapfile = false, -- no swap file
-    -- clipboard = "unnamedplus", -- access to system clipboard
+    clipboard = "unnamedplus", -- access to system clipboard
     cmdheight = 1, -- more space in command line
     completeopt = { "menuone", "noselect" }, -- settings for cmp plugin
     mouse = "a", -- enable mouse
@@ -57,7 +59,7 @@ local options = {
 
     splitright = true, -- vsplit window opens at the right
     splitbelow = true, -- hsplit window opens at the bottom
-    guifont = "Liga Hasklug Nerd Font Mono:h12",
+    guifont = "Liga Hasklug Nerd Font Mono:h13",
 }
 
 opt.shortmess:append "c"
@@ -77,12 +79,12 @@ autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,
 ]]
 
 -- Access to Windows clipboard
-cmd [[
-    let s:clip = '/mnt/c/Windows/System32/clip.exe'
-    if executable(s:clip)
-        augroup WSLYank
-            autocmd!
-            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-        augroup END
-    endif
-]]
+-- cmd [[
+--     let s:clip = '/mnt/c/Windows/System32/clip.exe'
+--     if executable(s:clip)
+--         augroup WSLYank
+--             autocmd!
+--             autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+--         augroup END
+--     endif
+-- ]]
