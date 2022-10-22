@@ -107,7 +107,6 @@ return packer.startup(function(use)
     use 'olimorris/onedarkpro.nvim'
 
     use "rcarriga/nvim-notify"
-    use "tenxsoydev/size-matters.nvim"
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp", commit = "9a0c639ac2324e6e9ecc54dc22b1d32bb6c42ab9" } -- The completion plugin

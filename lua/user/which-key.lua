@@ -94,17 +94,13 @@ local mappings = {
         d = { "<cmd>q!<cr>", "Quit and discard changes" },
     },
 
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["R"] = { "<cmd>w<cr><cmd>luafile %<CR>", "Reload lua" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     f = {
         name = "File",
-        f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-            "Find File" },
-        t = {"<cmd>Telescope live_grep theme=ivy<cr>", "Find Text"},
         s = { "<cmd>w!<CR>", "Save" },
     },
-    ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    ["/"] = {"<cmd>Telescope live_grep theme=ivy<cr>", "Find Text"},
+    ["."] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find File" },
 
     ["X"] = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python3 %' size=20 direction='horizontal'\"<cr>", "Run python" },
 
@@ -128,9 +124,13 @@ local mappings = {
         j = { "<cmd>RustJoinLines<cr>", "Join Lines" },
         p = { "<cmd>RustParentModule<cr>", "Parent Module" },
     },
+    b = {
+        name = "Buffer",
+        k = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    },
 
     -- Debuggig keys
-    ["b"] = { "<cmd>lua require'dap'.toggle_breakpoint();store_breakpoints(false)<cr>", "Breakpoint" },
+    --[[ ["b"] = { "<cmd>lua require'dap'.toggle_breakpoint();store_breakpoints(false)<cr>", "Breakpoint" }, ]]
     ["i"] = { "<cmd>DapStepInto<cr>", "Step into" },
     ["o"] = { "<cmd>DapStepOver<cr>", "Step over" },
     ["O"] = { "<cmd>DapStepOut<cr>", "Step out" },
@@ -154,7 +154,7 @@ local mappings = {
     },
 
     m = {
-        name = "Markdown",
+        name = "markdown",
         p = { "<cmd>MarkdownPreview<cr>", "Preview" },
         t = { "<cmd>MarkdownPreviewToggle<cr>", "Toggle" },
         s = { "<cmd>MarkdownPreviewStop<cr>", "Stop" },
@@ -162,16 +162,21 @@ local mappings = {
 
     -- DBUI keys
     x = {
-        name = "Databases",
+        name = "databases",
         u = { "<cmd>DBUIToggle<CR>", "Toggle UI" },
         f = { "<cmd>DBUIFindBuffer<CR>", "Find buffer" },
         r = { "<cmd>DBUIRenameBuffer<CR>", "Rename buffer" },
         l = { "<cmd>DBUILastQueryInfo<CR>", "Last query" },
     },
 
+    p = { 
+        name = "projectile",
+        p = {"<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects"},
+    },
+
     -- Packer
-    p = {
-        name = "Packer",
+    ["P"] = {
+        name = "packer",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
         i = { "<cmd>PackerInstall<cr>", "Install" },
         s = { "<cmd>PackerSync<cr>", "Sync" },
@@ -182,11 +187,11 @@ local mappings = {
     -- Git
     g = {
         name = "Git",
-        -- g = { "<cmd>LazyGit<CR>", "Lazygit" },
+        g = { "<cmd>Neogit<CR>", "Lazygit" },
         -- v = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "View repos" },
         k = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         l = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-        h = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+        B = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
         p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
         r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
         R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -240,21 +245,26 @@ local mappings = {
         p = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", "Doc scroll up" },
         D = { "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", "Preview definition" }
     },
-    s = {
-        name = "Search",
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+
+    h = {
+        name = "help",
+        t = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    },
+
+    s = {
+        name = "search",
+        c = { "<cmd>nohlsearch<CR>", "No Highlight" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
-        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
     },
 
     -- Terminal
     t = {
-        name = "Terminal",
+        name = "terminal",
         T = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" }, -- the same as for lazygit, shortcuts are broken due to vim normal mode
         p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
