@@ -53,5 +53,5 @@ require('material').setup({
 	async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
 })
 
-vim.g.material_style = "deep ocean"
+vim.g.material_style = "darker"
 vim.cmd 'colorscheme material'

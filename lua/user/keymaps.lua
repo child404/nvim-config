@@ -28,8 +28,8 @@ map("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- Easier buffer navigation
-map("n", "<S-l>", ":bnext<CR>", opts)
-map("n", "<S-k>", ":bprevious<CR>", opts)
+map("n", "<S-k>", ":bnext<CR>", opts)
+map("n", "<S-l>", ":bprevious<CR>", opts)
 
 map("n", "<cr>", "<cmd>FineCmdline<CR>", {noremap = true})
 

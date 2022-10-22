@@ -106,7 +106,7 @@ cmp.setup {
         nvim_lua = "[Lua]",
         ["vim-dadbod-completion"] = "[DB]",
         luasnip = "[Snippet]",
-        cmp_tabnine = "[TabNine]",
+        -- cmp_tabnine = "[TabNine]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -117,7 +117,7 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
-    { name = "cmp_tabnine" },
+    -- { name = "cmp_tabnine" },
     { name = "buffer" },
     { name = "path" },
     { name = "vim-dadbod-completion" },

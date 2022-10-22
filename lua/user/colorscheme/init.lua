@@ -5,7 +5,8 @@
 -- Bestie colorschemes
 -- require "user.colorscheme.ayu"
 -- require "user.colorscheme.moonfly"
-require "user.colorscheme.dracula"
+--[[ require "user.colorscheme.dracula" ]]
+require "user.colorscheme.tomorrow-night"
 -- require "user.colorscheme.gruvbox"
 -- require "user.colorscheme.material"
 -- require "user.colorscheme.oceanic_next"

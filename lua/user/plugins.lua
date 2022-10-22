@@ -71,9 +71,10 @@ return packer.startup(function(use)
 
     -- Git (may be some more plugins here), awesome in combination with lazygit
     use "lewis6991/gitsigns.nvim"
-    use "kdheepak/lazygit.nvim"
+    -- use "kdheepak/lazygit.nvim"
     use "APZelos/blamer.nvim"
     use "tpope/vim-fugitive"
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
     -- Telescope (media files doesnt work without ueberzug)
     use "nvim-telescope/telescope.nvim" -- fuzzy finder
@@ -102,6 +103,7 @@ return packer.startup(function(use)
     use 'https://gitlab.com/__tpb/monokai-pro.nvim'
     use "Mofiqul/dracula.nvim"
     use 'bluz71/vim-moonfly-colors'
+    use { "ellisonleao/gruvbox.nvim" }
     use 'olimorris/onedarkpro.nvim'
 
     use "rcarriga/nvim-notify"
@@ -114,7 +116,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp" -- lsp completions
-    use { 'tzachar/cmp-tabnine', run = './install.sh' }
+    -- use { 'tzachar/cmp-tabnine', run = './install.sh' }
     use "hrsh7th/cmp-nvim-lua"
 
     -- snippets

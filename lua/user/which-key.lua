@@ -182,8 +182,8 @@ local mappings = {
     -- Git
     g = {
         name = "Git",
-        g = { "<cmd>LazyGit<CR>", "Lazygit" },
-        v = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "View repos" },
+        -- g = { "<cmd>LazyGit<CR>", "Lazygit" },
+        -- v = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "View repos" },
         k = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         l = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
         h = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
