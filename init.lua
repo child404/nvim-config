@@ -1,7 +1,7 @@
 --[[ init.lua ]]
 
 -- Speed up plugin's loading time
-require "impatient"
+require "user.impatient"
 
 -- IMPORTS
 require "user.options" -- Options
