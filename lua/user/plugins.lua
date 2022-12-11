@@ -46,7 +46,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "kyazdani42/nvim-web-devicons" -- icons for nvimtree/lualine
-    use 'sunjon/shade.nvim'
+    --[[ use 'sunjon/shade.nvim' ]]
 
     use "lewis6991/impatient.nvim" -- speed up plugin loading
 
@@ -55,6 +55,15 @@ return packer.startup(function(use)
     -- use 'edluffy/specs.nvim'
     use "machakann/vim-highlightedyank" -- highlight lines you yanked
     use "windwp/nvim-autopairs" -- automatically (smart) close brackets
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
     use "nvim-lualine/lualine.nvim" -- cool status line
     use "kyazdani42/nvim-tree.lua" -- replacement of nerdtree
     use "folke/which-key.nvim" -- shows keymaps while pressing
@@ -74,7 +83,7 @@ return packer.startup(function(use)
     -- use "kdheepak/lazygit.nvim"
     use "APZelos/blamer.nvim"
     use "tpope/vim-fugitive"
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use {'TimUntersberger/neogit', commit = '572762e3f43962fadd931a97301ea03868b71d11'}
 
     -- Telescope (media files doesnt work without ueberzug)
     use "nvim-telescope/telescope.nvim" -- fuzzy finder

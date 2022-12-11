@@ -26,7 +26,7 @@ comment.setup {
     ---@type table
     toggler = {
         ---Line-comment toggle keymap
-        line = 'gj',
+        line = 'gcc',
         ---Block-comment toggle keymap
         block = 'gbc',
     },

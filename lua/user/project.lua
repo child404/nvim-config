@@ -24,14 +24,14 @@ project.setup({
 	detection_methods = { "pattern" },
 
 	---@usage patterns used to detect root dir, when **"pattern"** is in detection_methods
-	patterns = { ".git", "requirements.txt", "Makefile", "package.json", "Cargo.toml", ".toml" },
+	patterns = { ".git", "requirements.txt", "Pipfile", "Pipfile.lock", "Makefile", "package.json", "Cargo.toml", ".toml" },
 
 	---@ Show hidden files in telescope when searching for files in a project
 	show_hidden = false,
 
 	---@usage When set to false, you will get a message when project.nvim changes your directory.
 	-- When set to false, you will get a message when project.nvim changes your directory.
-	silent_chdir = false,
+	silent_chdir = true,
 
 	---@usage list of lsp client names to ignore when using **lsp** detection. eg: { "efm", ... }
 	ignore_lsp = {},

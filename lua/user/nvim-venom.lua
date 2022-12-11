@@ -8,8 +8,8 @@ end
 
 venom.setup({
     auto_activate = true,
-    echo = true,
-    quiet = false,
+    echo = false,
+    quiet = true,
     symbol = "🐍",
     root_patterns = { ".venv", ".python-version", "venv", "*venv", "venv*", "env", "env*" },
     -- use_tools = true,

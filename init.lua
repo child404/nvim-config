@@ -24,7 +24,7 @@ require "user.gitsigns" -- git highlighting and handling changes
 require "user.bufferline" -- awesome tabs (buffers) at the top Shifts+k/l to navigate,
 -- <leader>c to close the buffer, <leader>b to search through the buffers
 require "user.alpha" -- awesome greeter, press <leader>a or launch nvim
-require "user.project" -- project manager, press <leader>P
+require "user.project" -- project manager, press <leader>pp
 require "user.which-key" -- hints for available key-combinations, emacs-like (activates on <leader> key)
 require "user.indentline" -- line indentation in code blocks
 require "user.toggleterm" -- <leader>t to check available options

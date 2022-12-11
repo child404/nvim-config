@@ -15,21 +15,20 @@ map("", "k", "j", opts)
 map("", "j", "h", opts)
 map("i", "<C-j>", "<BS>", { silent = true })
 
--- Easier window navigation
-map("n", "<C-j>", "<C-w>h", opts)
-map("n", "<C-k>", "<C-w>j", opts)
-map("n", "<C-l>", "<C-w>k", opts)
+map("n", "<C-w>j", "<C-w>h", opts)
+map("n", "<C-w>k", "<C-w>j", opts)
+map("n", "<C-w>l", "<C-w>k", opts)
 map("n", "<C-w>;", "<C-w>l", opts) -- no way to bind Ctrl+Semicolon in vim
 
 -- Resize with arrows
-map("n", "<C-Up>", ":resize +2<CR>", opts)
-map("n", "<C-Down>", ":resize -2<CR>", opts)
-map("n", "<C-Left>", ":vertical resize +2<CR>", opts)
-map("n", "<C-Right>", ":vertical resize -2<CR>", opts)
+map("n", "<C-S-]", ":resize +3<CR>", opts)
+map("n", "<C-S-[", ":resize -3<CR>", opts)
+map("n", "<C-S-,", ":vertical resize +3<CR>", opts)
+map("n", "<C-S-.", ":vertical resize -3<CR>", opts)
 
 -- Easier buffer navigation
-map("n", "<C-K>", ":bnext<CR>", opts)
-map("n", "<C-L>", ":bprevious<CR>", opts)
+map("n", "<C-S-k>", ":bnext<CR>", opts)
+map("n", "<C-S-l>", ":bprevious<CR>", opts)
 
 vim.cmd [[
     autocmd FileType python map <buffer> <C-X> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>

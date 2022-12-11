@@ -79,33 +79,34 @@ local opts = {
 }
 
 local mappings = {
-    ["n"] = { "<cmd>Telescope notify<cr>", "Notifications" },
-    ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-    ["B"] = {
-        "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-        "Buffers",
-    },
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-
     q = {
-        name = "Quit",
+        name = "quit",
         q = { "<cmd>q<cr>", "Quit" },
         s = { "<cmd>wq!<cr>", "Save and quit" },
         d = { "<cmd>q!<cr>", "Quit and discard changes" },
     },
 
-    ["R"] = { "<cmd>w<cr><cmd>luafile %<CR>", "Reload lua" },
     f = {
-        name = "File",
+        name = "file",
         s = { "<cmd>w!<CR>", "Save" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
     },
+
+    s = {
+        name = "search",
+        c = { "<cmd>nohlsearch<CR>", "No Highlight" },
+        R = { "<cmd>Telescope registers<cr>", "Registers" },
+        n = { "<cmd>Telescope notify<cr>", "Notifications" },
+    },
+
     ["/"] = {"<cmd>Telescope live_grep theme=ivy<cr>", "Find Text"},
-    ["."] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find File" },
+
+    [" "] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find File" },
 
     ["X"] = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python3 %' size=20 direction='horizontal'\"<cr>", "Run python" },
 
     r = {
-        name = "Rust",
+        name = "rust",
         a = { "<cmd>RustCodeAction<cr>", "Code Action" },
         E = { "<cmd>RustExpand<cr>", "Expand" },
         e = { "<cmd>RustExpandMacro<cr>", "Expand Macro" },
@@ -124,18 +125,19 @@ local mappings = {
         j = { "<cmd>RustJoinLines<cr>", "Join Lines" },
         p = { "<cmd>RustParentModule<cr>", "Parent Module" },
     },
+
     b = {
-        name = "Buffer",
-        k = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+        name = "buffer",
+        k = { "<cmd>Bdelete!<CR>", "Close buffer" },
+        b = {
+            "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+            "Buffers",
+        },
     },
 
     -- Debuggig keys
-    --[[ ["b"] = { "<cmd>lua require'dap'.toggle_breakpoint();store_breakpoints(false)<cr>", "Breakpoint" }, ]]
-    ["i"] = { "<cmd>DapStepInto<cr>", "Step into" },
-    ["o"] = { "<cmd>DapStepOver<cr>", "Step over" },
-    ["O"] = { "<cmd>DapStepOut<cr>", "Step out" },
     d = {
-        name = "Debug",
+        name = "debug",
         d = { "<cmd>w<cr><cmd>DapContinue<cr>", "Debug/Continue" },
         D = { "<cmd>lua require'dap'.clear_breakpoints();store_breakpoints(true)<cr>", "Delete breakpoints" },
         r = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to cursor" },
@@ -151,6 +153,10 @@ local mappings = {
         e = { "<cmd>lua require('dapui').eval()<cr>", "Eval/Inspect" },
         C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Condition breakpoint" },
         L = { "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", "Log breakpoint" },
+        b = { "<cmd>lua require'dap'.toggle_breakpoint();store_breakpoints(false)<cr>", "Breakpoint" },
+        i = { "<cmd>DapStepInto<cr>", "Step into" },
+        o = { "<cmd>DapStepOver<cr>", "Step over" },
+        O = { "<cmd>DapStepOut<cr>", "Step out" },
     },
 
     m = {
@@ -169,7 +175,7 @@ local mappings = {
         l = { "<cmd>DBUILastQueryInfo<CR>", "Last query" },
     },
 
-    p = { 
+    p = {
         name = "projectile",
         p = {"<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects"},
     },
@@ -186,7 +192,7 @@ local mappings = {
 
     -- Git
     g = {
-        name = "Git",
+        name = "git",
         g = { "<cmd>Neogit<CR>", "Lazygit" },
         -- v = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "View repos" },
         k = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
@@ -250,26 +256,17 @@ local mappings = {
         name = "help",
         t = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+        m = { "<cmd>Telescope man_pages<cr>", "Man pages" },
+        h = { "<cmd>Telescope help_tags<cr>", "Find help" },
+        r = { "<cmd>w<cr><cmd>luafile %<CR>", "Reload lua file" },
+        c = { "<cmd>Telescope commands<cr>", "Commands" },
     },
 
-    s = {
-        name = "search",
-        c = { "<cmd>nohlsearch<CR>", "No Highlight" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        R = { "<cmd>Telescope registers<cr>", "Registers" },
-        C = { "<cmd>Telescope commands<cr>", "Commands" },
-    },
-
-    -- Terminal
-    t = {
-        name = "terminal",
-        T = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" }, -- the same as for lazygit, shortcuts are broken due to vim normal mode
-        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-        h = { "<cmd>exec v:count1 . \"ToggleTerm size=15 direction=horizontal\"<cr>", "Horizontal" },
-        v = { "<cmd>ToggleTerm size=60 direction=vertical<cr>", "Vertical" },
+    o = {
+        name = "open",
+        t = { "<cmd>exec v:count1 . \"ToggleTerm size=15 direction=horizontal\"<cr>", "Horizontal" },
+        p = { "<cmd>NvimTreeToggle<cr>", "Project sidebar" },
+        s = { "<cmd>Alpha<cr>", "Start page" },
     },
 }
 
