@@ -29,16 +29,16 @@ require "user.which-key" -- hints for available key-combinations, emacs-like (ac
 require "user.indentline" -- line indentation in code blocks
 require "user.toggleterm" -- <leader>t to check available options
 require "user.dap" -- powerful debugging tool, see <leader>d for more options
-require "user.neogit" -- lazygit integration with neovim
+--[[ require "user.neogit" -- lazygit integration with neovim ]]
 require "user.nvim-venom" -- automatically detect python virtualenv
 require "user.nvim-trouble" -- open diagnostic list
 require "user.nvim-lsp-signature" -- live signature for functions
 require "user.lsp-saga"
 require "user.rust-tools"
 require "user.notify"
-require "user.shade"
-require "user.size_matters"
-require "user.pylsp"
+--[[ require "user.shade" ]]
+--[[ require "user.size_matters" ]]
+--[[ require "user.pylsp" ]]
 
 -- TODO:
 -- 1) Install more plugins from https://github.com/cwebster2/vim/blob/main/lua/cwebster/plugins.lua
