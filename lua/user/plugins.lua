@@ -81,7 +81,7 @@ return packer.startup(function(use)
     -- Git (may be some more plugins here), awesome in combination with lazygit
     use "lewis6991/gitsigns.nvim"
     -- use "kdheepak/lazygit.nvim"
-    use "APZelos/blamer.nvim"
+    --[[ use "APZelos/blamer.nvim" ]]
     use "tpope/vim-fugitive"
     use {'TimUntersberger/neogit', commit = '572762e3f43962fadd931a97301ea03868b71d11'}
 
