@@ -35,7 +35,7 @@ local setup = {
     },
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-        separator = "➜", -- symbol used between a key and it's label
+        separator = "➜ ", -- symbol used between a key and it's label
         group = "+", -- symbol prepended to a group
     },
     popup_mappings = {
@@ -89,19 +89,25 @@ local mappings = {
     f = {
         name = "file",
         s = { "<cmd>w!<CR>", "Save" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+        r = { "<cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_ivy{previewer = false})<cr>", "Recent File" },
+        f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy{previewer = false})<cr>", "Find Files" },
     },
 
     s = {
         name = "search",
         c = { "<cmd>nohlsearch<CR>", "No Highlight" },
-        R = { "<cmd>Telescope registers<cr>", "Registers" },
-        n = { "<cmd>Telescope notify<cr>", "Notifications" },
+        R = { "<cmd>lua require('telescope.builtin').registers(require('telescope.themes').get_ivy{previewer = false})<cr>", "Registers" },
+        n = { "<cmd>lua require('telescope').extensions.notify.notify(require('telescope.themes').get_ivy{previewer = false})<cr>", "Notifications" },
+        --[[ t = {"<cmd>lua require('telescope.previewers').vim_buffer_cat.new(require('telescope.themes').get_ivy{previewer = false})<cr>", "Cat Buffer"}, ]]
+        --[[ g = {"<cmd>lua require('telescope.previewers').vim_buffer_vimgrep.new(require('telescope.themes').get_ivy{previewer = false})<cr>", "Grep Buffer"}, ]]
+        b = {"<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy{previewer = false})<cr>", "Search buffer"},
     },
 
-    ["/"] = {"<cmd>Telescope live_grep theme=ivy<cr>", "Find Text"},
+    ["/"] = {"<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy{previewer = false})<cr>", "Find Text"},
 
-    [" "] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find File" },
+    [" "] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy{previewer = false})<cr>", "Find File" },
+    [","] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy{previewer = false})<cr>", "Switch buffer" },
+    ["."] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy{previewer = false})<cr>", "Find Files" },
 
     ["X"] = { "<cmd>w<cr><cmd>exe v:count1 . \"TermExec cmd='python3 %' size=20 direction='horizontal'\"<cr>", "Run python" },
 
@@ -130,9 +136,16 @@ local mappings = {
         name = "buffer",
         k = { "<cmd>Bdelete!<CR>", "Close buffer" },
         b = {
-            "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+            "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy{previewer = false})<cr>",
             "Buffers",
         },
+        p = {"<cmd>BufferLinePick<cr>", "Pick Buffer"},
+        c = {"<cmd>BufferLinePickClose<cr>", "Pick Close Buffer"},
+    },
+
+    w = {
+        name = "window",
+        c = {"<cmd>q<cr>", "Close window"},
     },
 
     -- Debuggig keys
@@ -142,12 +155,12 @@ local mappings = {
         D = { "<cmd>lua require'dap'.clear_breakpoints();store_breakpoints(true)<cr>", "Delete breakpoints" },
         r = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to cursor" },
         R = { "<cmd>DapToggleRepl<cr>", "Repl" },
-        c = { "<cmd>Telescope dap commands<cr>", "Commands" },
-        l = { "<cmd>Telescope dap list_breakpoints<cr>", "List breakpoints" },
-        f = { "<cmd>Telescope dap frames<cr>", "Frames" },
-        F = { "<cmd>Telescope dap configurations<cr>", "Configurations" },
+        c = { "<cmd>lua require('telescope').extensions.dap.commands(require('telescope.themes').get_ivy{previewer = false})<cr>", "Commands" },
+        l = { "<cmd>lua require('telescope').extensions.dap.list_breakpoints(require('telescope.themes').get_ivy{previewer = false})<cr>", "List breakpoints" },
+        f = { "<cmd>lua require('telescope').extensions.dap.frames(require('telescope.themes').get_ivy{previewer = false})<cr>", "Frames" },
+        F = { "<cmd>lua require('telescope').extensions.dap.configurations(require('telescope.themes').get_ivy{previewer = false})<cr>", "Configurations" },
         t = { "<cmd>DapTerminate<cr>", "Terminate" },
-        v = { "<cmd>Telescope dap variables<cr>", "Variables" },
+        v = { "<cmd>lua require('telescope').extensions.dap.variables(require('telescope.themes').get_ivy{previewer = false})<cr>", "Variables" },
         h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover" },
         s = { "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<cr>", "Scopes" },
         e = { "<cmd>lua require('dapui').eval()<cr>", "Eval/Inspect" },
@@ -206,9 +219,10 @@ local mappings = {
             "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
             "Undo Stage Hunk",
         },
-        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+        o = { "<cmd>lua require('telescope.builtin').git_status(require('telescope.themes').get_ivy{previewer = false})<cr>", "Open changed file" },
+        b = { "<cmd>lua require('telescope.builtin').git_branches(require('telescope.themes').get_ivy{previewer = false})<cr>", "Checkout branch" },
+        c = { "<cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_ivy{previewer = false})<cr>", "Checkout commit" },
+        S = { "<cmd>lua require('telescope.builtin').git_stash(require('telescope.themes').get_ivy{previewer = false})<cr>", "Checkout commit" },
         d = {
             "<cmd>Gitsigns diffthis HEAD<cr>",
             "Diff",
@@ -242,9 +256,9 @@ local mappings = {
         c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
         q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
         r = { "<cmd>Lspsaga rename<cr>", "Rename" },
-        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        s = { "<cmd>lua require('telescope.builtin').lsp_document_symbols(require('telescope.themes').get_ivy{previewer = false})<cr>", "Document Symbols" },
         S = {
-            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+            "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols(require('telescope.themes').get_ivy{previewer = false})<cr>",
             "Workspace Symbols",
         },
         n = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", "Doc scroll down" },
@@ -254,12 +268,18 @@ local mappings = {
 
     h = {
         name = "help",
-        t = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        m = { "<cmd>Telescope man_pages<cr>", "Man pages" },
-        h = { "<cmd>Telescope help_tags<cr>", "Find help" },
-        r = { "<cmd>w<cr><cmd>luafile %<CR>", "Reload lua file" },
-        c = { "<cmd>Telescope commands<cr>", "Commands" },
+        t = { "<cmd>lua require('telescope.builtin').colorscheme(require('telescope.themes').get_ivy{previewer = false})<cr>", "Colorscheme" },
+        k = { "<cmd>lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy{previewer = false})<cr>", "Keymaps" },
+        m = { "<cmd>lua require('telescope.builtin').man_pages(require('telescope.themes').get_ivy{previewer = false})<cr>", "Man pages" },
+        h = { "<cmd>lua require('telescope.builtin').help_tags(require('telescope.themes').get_ivy{previewer = false})<cr>", "Find help" },
+        r = {
+            name = "reload",
+            r = { "<cmd>w<cr><cmd>luafile ~/.config/nvim/init.lua<CR>", "Reload config" },
+            f = { "<cmd>w<cr><cmd>luafile %<CR>", "Reload lua file" },
+        },
+        s = { "<cmd>lua require('telescope.builtin').search_history(require('telescope.themes').get_ivy{previewer = false})<cr>", "Search history" },
+        c = { "<cmd>lua require('telescope.builtin').command_history(require('telescope.themes').get_ivy{previewer = false})<cr>", "Command history" },
+        C = { "<cmd>lua require('telescope.builtin').commands(require('telescope.themes').get_ivy{previewer = false})<cr>", "Commands" },
     },
 
     o = {

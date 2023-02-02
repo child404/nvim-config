@@ -114,6 +114,7 @@ return packer.startup(function(use)
     use 'bluz71/vim-moonfly-colors'
     use { "ellisonleao/gruvbox.nvim" }
     use 'olimorris/onedarkpro.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use "rcarriga/nvim-notify"
 
